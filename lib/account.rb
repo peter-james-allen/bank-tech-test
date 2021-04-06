@@ -20,9 +20,11 @@ class Account
 
   private
   def validate_input?(amount)
-    check1 = amount.instance_of? Integer
-    check2 = (amount.instance_of? Float) && (amount.to_s.split('.').last.length <= 2 )
-    check1 || check2
+    check_int = amount.instance_of? Integer
+    check_float = amount.instance_of? Float
+    check_dp = amount.to_s.split('.').last.length <= 2
+
+    check_int || (check_float && check_dp)
   end
 
 end
