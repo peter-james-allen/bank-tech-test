@@ -12,7 +12,7 @@ class Statement
   private
 
   def format_transactions
-    '' 
+    ''
     # @transactions.each do
   end
 end
