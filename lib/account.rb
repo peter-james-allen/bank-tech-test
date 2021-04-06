@@ -4,21 +4,24 @@ require_relative 'exceptions'
 
 # Account class - stores account balance and array of transactions
 class Account
-  attr_reader :balance
+  attr_reader :balance, :transactions
 
   def initialize
     @balance = 0.00
+    @transactions = []
   end
 
   def deposit(amount)
     raise InputFormatError unless validate_input?(amount)
 
+    @transactions.push(Transaction.new(amount, @balance))
     @balance += amount
   end
 
   def withdraw(amount)
     raise InputFormatError unless validate_input?(amount)
 
+    @transactions.push(Transaction.new(amount, @balance))
     @balance -= amount
   end
 

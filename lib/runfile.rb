@@ -6,5 +6,5 @@ require_relative 'statement'
 require_relative 'transaction'
 require_relative 'menu'
 
-# u = UI.new
-# exit
+m = Menu.new.start
+exit

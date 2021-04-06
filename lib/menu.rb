@@ -6,11 +6,9 @@ class Menu
 3. View Statement
 4. Exit
 "
-  CHOICES = [1,2,3,4]
 
-  def display
-    puts MENU
-    @choice = gets.chomp.to_i
+  def initialize
+    @account = Account.new
   end
 
   def start
@@ -20,15 +18,20 @@ class Menu
     case choice
     when 1
       puts "How much do you want to deposit?"
+      @account.deposit(gets.chomp.to_f)
     when 2
       puts "How much do you want to withdraw?"
+      @account.withdraw(-gets.chomp.to_f)
     when 3
-      puts "You should be ok for now."
+      @statement = Statement.new(@account.transactions)
+      puts @statement.to_s
     when 4
       puts "Exiting the program"
+      exit
     else
       puts "Make a choice between 1-4"
-      start
     end
+
+    start
   end
 end
