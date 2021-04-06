@@ -22,9 +22,9 @@ class Account
   def validate_input?(amount)
     check_int = amount.instance_of? Integer
     check_float = amount.instance_of? Float
-    check_dp = amount.to_s.split('.').last.length <= 2
+    check_float_dp = amount.to_s.split('.').last.length <= 2
 
-    check_int || (check_float && check_dp)
+    check_int || (check_float && check_float_dp)
   end
 
 end
