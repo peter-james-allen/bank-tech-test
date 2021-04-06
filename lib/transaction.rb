@@ -2,7 +2,7 @@
 
 # Transaction class - stores information about a transaction
 class Transaction
-  attr_reader :date, :credit, :debit, :end_balance
+  attr_reader :date, :credit, :debit, :start_balance, :end_balance
 
   def initialize(amount, start_balance)
     @credit = ''

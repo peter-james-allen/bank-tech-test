@@ -17,6 +17,6 @@ describe Statement do
   let(:subject) { Statement.new(transactions) }
 
   it 'should have a header' do
-    expect(subject.to_s.split('\n').first).to eq 'date || credit || debit || balance'
+    expect(subject.to_s.split("\n").first).to eq 'date || credit || debit || balance'
   end
 end
