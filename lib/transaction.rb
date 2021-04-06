@@ -1,12 +1,15 @@
-class Transaction
+# frozen_string_literal: true
 
-  attr_reader :date, :amount, :start_balance, :end_balance
+# Transaction class - stores information about a transaction
+class Transaction
+  attr_reader :date, :credit, :debit, :end_balance
 
   def initialize(amount, start_balance)
-    @amount = amount
+    @credit = ''
+    @debit = ''
+    amount.negative? ? @debit = -amount : @credit = amount
     @start_balance = start_balance
     @end_balance = start_balance + amount
-    @date = Time.now.strftime("%d/%m/%Y")
+    @date = Time.now.strftime('%d/%m/%Y')
   end
-
 end

@@ -1,8 +1,10 @@
-class Statement
+# frozen_string_literal: true
 
+# Statement class - formats an array of transactions for printing to the terminal with to_s method
+class Statement
   attr_reader :to_s
 
-  HEADER = 'date || credit || debit || balance\n'
+  HEADER = "date || credit || debit || balance\n"
 
   def initialize(transactions)
     @transactions = transactions
@@ -12,7 +14,8 @@ class Statement
   private
 
   def format_transactions
-    ''
-    # @transactions.each do
+    '' if @transactions.empty?
+
+    @transactions.map { |t| "#{t.date} || #{t.credit} || #{t.debit} || #{t.end_balance}" }.join("\n")
   end
 end

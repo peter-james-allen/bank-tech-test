@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# New error to capture incorrectly formatted input
 class InputFormatError < StandardError
   attr_reader :msg
 

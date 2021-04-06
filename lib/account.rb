@@ -2,7 +2,7 @@
 
 require_relative 'exceptions'
 
-# Account class
+# Account class - stores account balance and array of transactions
 class Account
   attr_reader :balance
 
