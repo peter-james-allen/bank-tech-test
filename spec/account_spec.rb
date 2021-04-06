@@ -11,4 +11,9 @@ describe Account do
     expect(subject.balance).to eq 10
   end
 
+  it 'should be able to make a withdrawal' do
+    subject.withdraw(10)
+    expect(subject.balance).to eq -10
+  end
+
 end
