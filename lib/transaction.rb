@@ -6,7 +6,7 @@ class Transaction
     @amount = amount
     @start_balance = start_balance
     @end_balance = start_balance + amount
-    @date = Time.now.strftime("%m/%d/%Y")
+    @date = Time.now.strftime("%d/%m/%Y")
   end
 
 end
