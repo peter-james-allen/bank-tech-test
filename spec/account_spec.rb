@@ -3,6 +3,10 @@
 require 'account'
 
 describe Account do
+  let(:statement_class) { double :statement_class, new: statement }
+  let(:statement) { double :statement, to_s: "header\n" }
+  let(:subject) { Account.new(statement_class: statement_class) }
+
   it 'should have a balance of zero by default' do
     expect(subject.balance).to eq 0
   end

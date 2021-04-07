@@ -1,14 +1,12 @@
 # frozen_string_literal: true
 
 require_relative 'exceptions'
-require_relative 'statement'
-require_relative 'transaction'
 
 # Account class - stores account balance and array of transactions
 class Account
   attr_reader :balance, :transactions
 
-  def initialize(statement_class = Statement, transaction_class = Transaction)
+  def initialize(statement_class: Statement, transaction_class: Transaction)
     @balance = 0.00
     @transactions = []
     @statement_class = statement_class
