@@ -5,7 +5,11 @@ require 'account'
 describe Account do
   let(:statement_class) { double :statement_class, new: statement }
   let(:statement) { double :statement, to_s: "header\n" }
-  let(:subject) { Account.new(statement_class: statement_class) }
+
+  let(:transaction_class) { double :transaction_class, new: transaction }
+  let(:transaction) { double :transaction }
+ 
+  let(:subject) { Account.new(statement_class: statement_class, transaction_class: transaction_class) }
 
   it 'should have a balance of zero by default' do
     expect(subject.balance).to eq 0
@@ -19,16 +23,14 @@ describe Account do
     subject.deposit(10)
     expect(subject.balance).to eq 10
     expect(subject.transactions.length).to eq 1
-    expect(subject.transactions.last).to be_a Transaction
-    expect(subject.transactions.last.credit).to be 10
+    expect(subject.transactions.last).to eq transaction
   end
 
   it 'should be able to make a withdrawal' do
     subject.withdraw(10)
     expect(subject.balance).to eq(-10)
     expect(subject.transactions.length).to eq 1
-    expect(subject.transactions.last).to be_a Transaction
-    expect(subject.transactions.last.debit).to be 10
+    expect(subject.transactions.last).to eq transaction
   end
 
   it 'should print a statement' do
