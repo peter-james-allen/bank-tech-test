@@ -26,7 +26,7 @@ class Account
   end
 
   def statement
-    puts @statement_class.new(@transactions).to_s
+    puts @statement_class.to_screen(@transactions)
   end
 
   private

@@ -3,8 +3,7 @@
 require 'account'
 
 describe Account do
-  let(:statement_class) { double :statement_class, new: statement }
-  let(:statement) { double :statement, to_s: "header\n" }
+  let(:statement_class) { double :statement_class, to_screen: "header\n" }
 
   let(:transaction_class) { double :transaction_class, new: transaction }
   let(:transaction) { double :transaction }
