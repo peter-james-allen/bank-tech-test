@@ -33,14 +33,14 @@ account = Account.new
 
 ### Deposit
 
-To make a deposit run the following command. The amount given as a parameter can be a positive integer or float with two decimal places.
+To make a deposit run the following command. The amount given as a parameter can be a positive integer or float with two decimal places otherwise an [error](#errors) is raised.
 ```
 account.deposit(100)
 ```
 
 ### Withdrawal
 
-To make a withdrawal run the following command. The amount given as a parameter can be a positive integer or float with two decimal places.
+To make a withdrawal run the following command. The amount given as a parameter can be a positive integer or float with two decimal places otherwise an [error](#errors) is raised.
 ```
 account.withdraw(50)
 ```
@@ -58,13 +58,22 @@ date || credit || debit || balance
 07/04/2021 || 100.00 ||  || 100.00
 ```
 
+### Errors
+
+The following error is raised if the incorrect input is given for the deposit and withdraw methods. The value has to be a positive number either in whole pounds (integer) or pounds and pence (flot with two decimal places).
+```
+Error: You must input a positive number with maximum of 2 decimal places
+```
+
 ## Testing
 
-The program has been written using TDD, with all tests written in rspec. The test coverage is 100% as measured with simplecov. The To run the tests run the following command in the terminal.
+The program has been written using TDD, with all tests written in rspec. The test coverage is 100% as measured with simplecov. To run the tests run the following command in the terminal.
 ```
 rspec -fd
 ```
 Each class has a test file in the spec folder. Where classes have dependancies they have been isolated and mocked with doubles so it's easier to debug.
+
+The tests cover all of the specification/requirements provided and also test for edge cases by validating the the user input.
 
 ## Specification
 
