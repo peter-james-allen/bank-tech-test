@@ -8,7 +8,7 @@ describe Account do
 
   let(:transaction_class) { double :transaction_class, new: transaction }
   let(:transaction) { double :transaction }
- 
+
   let(:subject) { Account.new(statement_class: statement_class, transaction_class: transaction_class) }
 
   it 'should have a balance of zero by default' do
