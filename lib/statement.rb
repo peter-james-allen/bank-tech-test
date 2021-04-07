@@ -16,6 +16,6 @@ class Statement
   def format_transactions
     '' if @transactions.empty?
 
-    @transactions.map { |t| "#{t.date} || #{t.credit} || #{t.debit} || #{t.end_balance}" }.join("\n")
+    @transactions.reverse.map { |t| "#{t.date} || #{t.credit} || #{t.debit} || #{t.end_balance}" }.join("\n")
   end
 end
