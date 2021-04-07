@@ -4,10 +4,9 @@ require_relative 'exceptions'
 
 # Account class - stores account balance and array of transactions
 class Account
-  attr_reader :balance, :transactions
+  attr_reader :transactions
 
   def initialize(statement_class: Statement, transaction_class: Transaction)
-    @balance = 0.00
     @transactions = []
     @statement_class = statement_class
     @transaction_class = transaction_class
@@ -29,11 +28,14 @@ class Account
     puts @statement_class.to_screen(@transactions)
   end
 
+  def balance
+    @transactions.empty? ? balance = 0.0 : balance = @transactions.last.end_balance
+  end
+
   private
 
   def transaction(amount)
-    @transactions << @transaction_class.new(amount, @balance)
-    @balance += amount
+    @transactions << @transaction_class.new(amount, balance)
   end
 
   def validate_input?(amount)
