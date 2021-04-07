@@ -12,20 +12,21 @@ class Account
   end
 
   def deposit(amount)
+    transaction(amount)
+  end
+
+  def withdraw(amount)
+    transaction(-amount)
+  end
+
+  private
+
+  def transaction(amount)
     raise InputFormatError unless validate_input?(amount)
 
     @transactions.push(Transaction.new(amount, @balance))
     @balance += amount
   end
-
-  def withdraw(amount)
-    raise InputFormatError unless validate_input?(amount)
-
-    @transactions.push(Transaction.new(amount, @balance))
-    @balance -= amount
-  end
-
-  private
 
   def validate_input?(amount)
     check_int = amount.instance_of? Integer

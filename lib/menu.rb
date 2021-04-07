@@ -21,7 +21,7 @@ class Menu
       @account.deposit(gets.chomp.to_f)
     when 2
       puts "How much do you want to withdraw?"
-      @account.withdraw(-gets.chomp.to_f)
+      @account.withdraw(gets.chomp.to_f)
     when 3
       @statement = Statement.new(@account.transactions)
       puts @statement.to_s
