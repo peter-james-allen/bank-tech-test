@@ -6,7 +6,7 @@ require_relative 'exceptions'
 class Account
   attr_reader :balance, :transactions
 
-  def initialize
+  def initialize(statement_class = Statement, transaction_class = Transaction)
     @balance = 0.00
     @transactions = []
   end
@@ -19,18 +19,25 @@ class Account
     transaction(-amount)
   end
 
+  def statement
+    puts Statement.new(@transactions).to_s
+  end
+
   private
 
   def transaction(amount)
     raise InputFormatError unless validate_input?(amount)
 
-    @transactions.push(Transaction.new(amount, @balance))
+    @transactions << Transaction.new(amount, @balance)
     @balance += amount
   end
 
   def validate_input?(amount)
+    # Check if input is an integer
     check_int = amount.instance_of? Integer
+    # Check if input is an float
     check_float = amount.instance_of? Float
+    # Check if input has more than 2 decimal places
     check_float_dp = amount.to_s.split('.').last.length <= 2
 
     check_int || (check_float && check_float_dp)

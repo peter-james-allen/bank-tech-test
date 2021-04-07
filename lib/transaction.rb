@@ -12,4 +12,5 @@ class Transaction
     @end_balance = start_balance + amount
     @date = Time.now.strftime('%d/%m/%Y')
   end
+
 end

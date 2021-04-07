@@ -16,11 +16,15 @@ describe Account do
     expect(subject.balance).to eq 10
     expect(subject.transactions.length).to eq 1
     expect(subject.transactions.last).to be_a Transaction
+    expect(subject.transactions.last.credit).to be 10
   end
 
   it 'should be able to make a withdrawal' do
     subject.withdraw(10)
     expect(subject.balance).to eq(-10)
+    expect(subject.transactions.length).to eq 1
+    expect(subject.transactions.last).to be_a Transaction
+    expect(subject.transactions.last.debit).to be 10
   end
 
   # Validate inputs
