@@ -37,14 +37,10 @@ class Account
   end
 
   def validate_input?(amount)
-    # Check if input is an integer
     check_int = amount.instance_of? Integer
-    # Check if input is an float
     check_float = amount.instance_of? Float
-    # Check if input has more than 2 decimal places
     check_float_dp = amount.to_s.split('.').last.length <= 2
-    # Check if input is positive
-    check_sign = amount.to_f > 0
+    check_sign = amount.to_f.positive?
 
     check_sign && (check_int || (check_float && check_float_dp))
   end

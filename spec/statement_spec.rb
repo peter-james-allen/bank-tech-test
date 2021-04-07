@@ -14,7 +14,6 @@ describe Statement do
     double :transaction3, date: '04/04/2021', credit: nil, debit: 70.00, start_balance: 49.50, end_balance: -20.50
   end
   let(:transactions) { [transaction1, transaction2, transaction3] }
-  # let(:subject) { Statement.new(transactions) }
 
   it 'should have a header' do
     expect(Statement.to_screen(transactions).split("\n").first).to eq 'date || credit || debit || balance'
