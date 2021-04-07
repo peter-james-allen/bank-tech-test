@@ -2,10 +2,11 @@
 
 This is my first submission for the Makers Academy Week 10 Tech Test, the goal was to write high quality code.
 
+![Screenshot](/bank.png?raw=true)
 
 The specification that was provided is [here](#specification), which I broke down into user stories [here](#user-stories).
 
-The code was written inusing TDD and meets all of the requirements and acceptance critera with 100% test coverage as outlined [here](#testing). It has been linted wiht rubocop.
+The code was written using TDD and meets all of the requirements and acceptance criteria with 100% test coverage as outlined [here](#testing). It has been linted with rubocop.
 
 The program is written in ruby and tested using rspec, it runs in irb from the terminal as outlined in the user guide [here](#user-guide)
 
@@ -13,7 +14,12 @@ The program is written in ruby and tested using rspec, it runs in irb from the t
 
 ### Start
 
-To launch the program run the following in the terminal
+To get started clone this repo locally and then navigate to the root folder in the terminal and run the bundler.
+```
+bundle
+``` 
+
+Then launch the program by running the following.
 ```
 irb -r ./lib/bank.rb
 ```
@@ -27,14 +33,14 @@ account = Account.new
 
 ### Deposit
 
-To make a deposit run the following command. The amount given as a parameter can be an positive integer or float with two decimal places.
+To make a deposit run the following command. The amount given as a parameter can be a positive integer or float with two decimal places.
 ```
 account.deposit(100)
 ```
 
-### Withdrawl
+### Withdrawal
 
-To make a withdrawl run the following command. The amount given as a parameter can be an positive integer or float with two decimal places.
+To make a withdrawal run the following command. The amount given as a parameter can be a positive integer or float with two decimal places.
 ```
 account.withdraw(50)
 ```
@@ -58,7 +64,7 @@ The program has been written using TDD, with all tests written in rspec. The tes
 ```
 rspec -fd
 ```
-Each class has a test file in the spec folder. Where classes have dependancies they have been isolated and mocked with doubles so its easier to debug.
+Each class has a test file in the spec folder. Where classes have dependancies they have been isolated and mocked with doubles so it's easier to debug.
 
 ## Specification
 
@@ -94,7 +100,7 @@ I would like to make a deposit
 ```
 As a customer
 So I can retrieve money
-I would like to make a withdrawl
+I would like to make a withdrawal
 ```
 ```
 As a customer
