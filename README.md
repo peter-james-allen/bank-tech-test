@@ -2,7 +2,7 @@
 
 This is my first submission for the Makers Academy Week 10 Tech Test, the goal was to write high quality code.
 
-![Screenshot](/bank.png?raw=true)
+![Screenshot](./bank.png?raw=true)
 
 The specification that was provided is [here](#specification), which I broke down into user stories [here](#user-stories).
 
