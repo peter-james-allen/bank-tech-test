@@ -37,9 +37,8 @@ describe Account do
     expect { subject.statement }.to output.to_stdout
   end
 
-  # Validate inputs
-  context 'should only take a integer or 2dp float as input' do
-    it 'should raise an error if a string is deposited or withdrawn' do
+  context 'input validation' do
+    it 'should raise an error if a non integer is deposited or withdrawn' do
       expect { subject.deposit('abc') }.to raise_error InputFormatError
       expect { subject.withdraw('abc') }.to raise_error InputFormatError
     end
