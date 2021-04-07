@@ -5,7 +5,7 @@ This is my first submission for the Makers Academy Week 10 Tech Test, the goal w
 
 The specification that was provided is [here](#specification), which I broke down into user stories [here](#user-stories).
 
-The code was written using TDD and meets all of the requirements and acceptance critera with 100% test coverage as outlined [here](#testing). It has been linted wiht rubocop.
+The code was written inusing TDD and meets all of the requirements and acceptance critera with 100% test coverage as outlined [here](#testing). It has been linted wiht rubocop.
 
 The program is written in ruby and tested using rspec, it runs in irb from the terminal as outlined in the user guide [here](#user-guide)
 
@@ -58,7 +58,7 @@ The program has been written using TDD, with all tests written in rspec. The tes
 ```
 rspec -fd
 ```
-Each class has a test file in the 'spec' folder. Where classes have dependancies they have been isolated and mocked with doubles so its easier to debug.
+Each class has a test file in the spec folder. Where classes have dependancies they have been isolated and mocked with doubles so its easier to debug.
 
 ## Specification
 

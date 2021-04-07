@@ -48,4 +48,9 @@ describe Account do
       expect { subject.withdraw(1.001) }.to raise_error InputFormatError
     end
   end
+
+  it 'should raise an error if a negative number is deposited or withdrawn' do
+    expect { subject.deposit(-10) }.to raise_error InputFormatError
+    expect { subject.withdraw(-10) }.to raise_error InputFormatError
+  end
 end

@@ -14,10 +14,14 @@ class Account
   end
 
   def deposit(amount)
+    raise InputFormatError unless validate_input?(amount)
+
     transaction(amount)
   end
 
   def withdraw(amount)
+    raise InputFormatError unless validate_input?(amount)
+
     transaction(-amount)
   end
 
@@ -28,8 +32,6 @@ class Account
   private
 
   def transaction(amount)
-    raise InputFormatError unless validate_input?(amount)
-
     @transactions << @transaction_class.new(amount, @balance)
     @balance += amount
   end
@@ -41,7 +43,9 @@ class Account
     check_float = amount.instance_of? Float
     # Check if input has more than 2 decimal places
     check_float_dp = amount.to_s.split('.').last.length <= 2
+    # Check if input is positive
+    check_sign = amount.to_f > 0
 
-    check_int || (check_float && check_float_dp)
+    check_sign && (check_int || (check_float && check_float_dp))
   end
 end
