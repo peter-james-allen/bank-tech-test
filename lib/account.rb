@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require_relative 'exceptions'
+require_relative 'statement'
+require_relative 'transaction'
 
 # Account class - stores account balance and array of transactions
 class Account
@@ -9,6 +11,8 @@ class Account
   def initialize(statement_class = Statement, transaction_class = Transaction)
     @balance = 0.00
     @transactions = []
+    @statement_class = statement_class
+    @transaction_class = transaction_class
   end
 
   def deposit(amount)
@@ -20,7 +24,7 @@ class Account
   end
 
   def statement
-    puts Statement.new(@transactions).to_s
+    puts @statement_class.new(@transactions).to_s
   end
 
   private
@@ -28,7 +32,7 @@ class Account
   def transaction(amount)
     raise InputFormatError unless validate_input?(amount)
 
-    @transactions << Transaction.new(amount, @balance)
+    @transactions << @transaction_class.new(amount, @balance)
     @balance += amount
   end
 

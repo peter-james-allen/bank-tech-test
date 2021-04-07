@@ -29,5 +29,4 @@ describe Statement do
     expect(subject.to_s.split("\n")[2]).to eq '02/04/2021 ||  || 50.50 || 49.50'
     expect(subject.to_s.split("\n")[3]).to eq '01/04/2021 || 100.00 ||  || 100.00'
   end
-
 end

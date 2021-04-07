@@ -20,6 +20,6 @@ class Statement
   end
 
   def format_s(value)
-    value == "" ? "" : "#{'%.2f' % value}"
+    value == '' ? '' : "#{'%.2f' % value}"
   end
 end

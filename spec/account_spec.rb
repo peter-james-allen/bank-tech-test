@@ -27,6 +27,10 @@ describe Account do
     expect(subject.transactions.last.debit).to be 10
   end
 
+  it 'should print a statement' do
+    expect { subject.statement }.to output.to_stdout
+  end
+
   # Validate inputs
   context 'should only take a integer or 2dp float as input' do
     it 'should raise an error if a string is deposited or withdrawn' do
