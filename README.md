@@ -71,7 +71,7 @@ The program has been written using TDD, with all tests written in rspec. The tes
 ```
 rspec -fd
 ```
-Each class has a test file in the spec folder. Where classes have dependancies they have been isolated and mocked with doubles so it's easier to debug.
+Each class has a test file in the spec folder. Where classes have dependancies they have been isolated and mocked with doubles so it's easier to debug. A feature test is also included to test the class interaction which simulates the acceptance criteria.
 
 The tests cover all of the specification/requirements provided and also test for edge cases by validating the the user input.
 
