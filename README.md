@@ -14,12 +14,7 @@ The program is written in ruby and tested using rspec, it runs in irb from the t
 
 ### Start
 
-To get started clone this repo locally and then navigate to the root folder in the terminal and run the bundler.
-```
-bundle
-``` 
-
-Then launch the program by running the following.
+To get started clone this repo locally and navigate to the root folder, then launch the program in irb by running the following.
 ```
 irb -r ./lib/bank.rb
 ```
